@@ -3,11 +3,13 @@
 #include <chrono>
 #include <math.h>
 
+//#include <stdlib.h>     /* srand, rand */
+//#include <time.h>       /* time */
+
 using namespace std;
 
-void switch_inds(vector<double>& v, int i, int j)
+void switch_vals(vector<double>& v, int i, int j)
 {
-	// switch inds in the vector
 	double buffer_temp;
 	buffer_temp = v[i];
 	v[i] = v[j];
@@ -16,7 +18,6 @@ void switch_inds(vector<double>& v, int i, int j)
 
 vector<double> rand_vect(int size_vector, int max_val, int min_val)
 {
-	// create a random vector
 	vector<double> rand_v = {};
 	double rand_val;
 	for (int i=0; i < size_vector; ++i)
@@ -24,62 +25,67 @@ vector<double> rand_vect(int size_vector, int max_val, int min_val)
 		rand_val = rand() % (max_val - min_val + 1) + min_val;
 		rand_v.push_back(rand_val);
 	}
+
+//	for (int i=0; i < size_vector; ++i) // print out the vector after the quicksort
+//	{
+//		cout << rand_v[i] << ' ';
+//	}
+
 	return rand_v;
 }
 
+
 void quicksort(vector<double>& to_be_sort, int begin_ind, int end_ind)
-{
-	// perform quicksort with in place replacement in the vector
-	// Inputs: vector passed by the reference, initial sorting index, final sorting index
-
-	vector<double> tmp_left_pivot = {};
-	vector<double> tmp_right_pivot = {};
-
-	int pivot_index=end_ind; // pivot is always chosen as the end member of the vector
-
-	if ((end_ind - begin_ind) > 0) // check if there are numbers within the limits
 	{
-		for (int i = begin_ind; i <= end_ind; ++i) // iterate up to the pivot
+	int i=begin_ind;
+	int j=end_ind;
+
+	if ((end_ind - begin_ind) > 0)
+	{
+		int pivot_ind = rand() % (end_ind - begin_ind + 1) + begin_ind;  //begin_ind
+//		cout << pivot_ind << endl;
+		int pivot_val=to_be_sort[pivot_ind];
+		while(i < j)
+		{
+			if (to_be_sort[i] <= pivot_val) // down down , down up
 			{
-				if (i != pivot_index)
+				if (to_be_sort[j] > pivot_val)
 				{
-					if (to_be_sort[i] <= to_be_sort[pivot_index])
-					{
-						tmp_left_pivot.push_back(to_be_sort[i]);
-					}
-
-					else
-					{
-						tmp_right_pivot.push_back(to_be_sort[i]);
-					}
+					j-=1;
 				}
+				i+=1;
 			}
 
-		tmp_left_pivot.push_back(to_be_sort[pivot_index]);
-		pivot_index = begin_ind + tmp_left_pivot.size() - 1;
-
-		for (int i = 0; i < tmp_left_pivot.size(); ++i) // iterate up to the pivot
+			else							//  up up , up down
 			{
-				to_be_sort[begin_ind+i] = tmp_left_pivot[i];
+				if (to_be_sort[j] <= pivot_val)
+				{
+					switch_vals(to_be_sort, i, j);
+					if (to_be_sort[i] == pivot_val) // check if the resulting index is a pivot
+					{
+						pivot_ind = i;
+					}
+					i+=1;
+				}
+				j-=1;
 			}
-		for (int i = 0; i < tmp_right_pivot.size(); ++i) // iterate up to the pivot
-			{
-				to_be_sort[begin_ind+i+tmp_left_pivot.size()] = tmp_right_pivot[i];
-			}
+		}
 
-		// erase the elements of vectors
-		tmp_left_pivot.erase(tmp_left_pivot.begin(), tmp_left_pivot.end());
-		tmp_right_pivot.erase(tmp_right_pivot.begin(), tmp_right_pivot.end());
+		if (to_be_sort[i] > pivot_val)
+		{
+			i-=1; // correct i to be the index of the last val that is <= pivot
+		}
+		switch_vals(to_be_sort, i, pivot_ind); // place pivot in the correct spot
+		pivot_ind = i; // correct the index of the pivot
 
-		quicksort(to_be_sort, begin_ind, pivot_index-1);
-		quicksort(to_be_sort, pivot_index+1, end_ind);
+		quicksort(to_be_sort, begin_ind, pivot_ind - 1);
+		quicksort(to_be_sort, pivot_ind + 1, end_ind);
 	}
 }
 
+
 vector<double> test_speed(int number_trials, int size_vector, int max_val, int min_val)
 {
-	// test the speed of the algorithm with several trials
-
 	srand(time(NULL)); // insure a different seed for the rand number
 	vector<double> results = {};
 	for (int i=0; i<number_trials; ++i)
@@ -99,7 +105,7 @@ int main()
 {
 	// test the speed of the algorithm via n tests with random numbers
 	int number_trials = pow(10,1);
-	int size_vector = pow(10,5);
+	int size_vector = pow(10,6);
 	double max_val = pow(10,6);
 	double min_val = -max_val;
 
