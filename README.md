@@ -4,7 +4,7 @@ This repository contains C++ code showcasing my knowledge of core CS concepts an
 
 ### Sorting Algorithms
 
-Quick Sort, Merge Sort
+Quick Sort, Merge Sort, Heap Sort
 
 ### Search Algorithms
 
