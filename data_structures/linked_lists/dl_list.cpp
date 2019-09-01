@@ -46,7 +46,8 @@ class DLList
         ~DLList();  // destructor
         void FrontInsert(double item); // insert a node with an item in front of the list
         void Print(); // print the items of the list
-        Node* GetNode(int index);
+        int GetSize(); // get the size of the list
+        Node* GetNode(int index); // return the node of the provided index
 };
 
 DLList::DLList()
@@ -86,6 +87,11 @@ void DLList::Print()
     cout << endl;
 };
 
+int DLList::GetSize()
+{// return the size of the array
+	return size;
+};
+
 Node* DLList::GetNode(int index)
 { // search for the node given the index in the array, starting from i = 0
     //TODO write raise value error
@@ -108,22 +114,12 @@ Node* DLList::GetNode(int index)
 
 int main(int argc, char const *argv[])
 {
-
-    // // TEST Print()
-    // DLList* new_ls = new DLList(); // initialize the list
-    // new_ls->FrontInsert(3);
-    // new_ls->FrontInsert(2.213);
-    // new_ls->FrontInsert(1);
-    // new_ls->Print();
-
-    // // // TEST GetNode(int index)
-    // DLList* new_ls = new DLList(); // initialize the list
-    // new_ls->FrontInsert(3);
-    // new_ls->FrontInsert(2.213);
-    // new_ls->FrontInsert(1);
-    // cout << new_ls->GetNode(1)->item << endl;
-    // cout << new_ls->GetNode(-10)->item << endl;
-    // cout << new_ls->GetNode(10)->item << endl;
+    // TEST GetSize()
+    DLList* new_ls = new DLList(); // initialize the list
+    new_ls->FrontInsert(3);
+    new_ls->FrontInsert(2.213);
+    new_ls->FrontInsert(1);
+    cout << new_ls->GetSize();
 
     return 0;
 }
@@ -169,3 +165,19 @@ int main(int argc, char const *argv[])
     // cout << new_ls->tail->prev_node->item << " "; // prev node test
     // cout << new_ls->tail->item << " "; // tail test
     // cout << new_ls->size << endl;
+
+    // // TEST Print()
+    // DLList* new_ls = new DLList(); // initialize the list
+    // new_ls->FrontInsert(3);
+    // new_ls->FrontInsert(2.213);
+    // new_ls->FrontInsert(1);
+    // new_ls->Print();
+
+    // // // TEST GetNode(int index)
+    // DLList* new_ls = new DLList(); // initialize the list
+    // new_ls->FrontInsert(3);
+    // new_ls->FrontInsert(2.213);
+    // new_ls->FrontInsert(1);
+    // cout << new_ls->GetNode(1)->item << endl;
+    // cout << new_ls->GetNode(-10)->item << endl;
+    // cout << new_ls->GetNode(10)->item << endl;
