@@ -148,15 +148,13 @@ void DLList::RemoveNode(int index)
 
 int main(int argc, char const *argv[])
 {
-
-
     // // TEST RemoveNode(int index)
     // DLList* new_ls = new DLList(); // initialize the list
     // new_ls->FrontInsert(3);
     // new_ls->FrontInsert(2.213);
     // new_ls->FrontInsert(1);
 
-    // int ind = 2; // 1, 2 works, 
+    // int ind = 10; // -1. 0. 1, 2, 10 works, 
     // cout << "Before del" << endl;
     // new_ls->Print();
     // cout << new_ls->GetSize() << endl;
