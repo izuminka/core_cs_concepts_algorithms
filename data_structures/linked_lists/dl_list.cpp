@@ -46,6 +46,7 @@ class DLList
         DLList();   // constructor
         ~DLList();  // destructor
         void FrontInsert(double item); // insert a node with an item in front of the list
+        void Print(); // print the items of the list
 };
 
 DLList::DLList()
@@ -55,6 +56,8 @@ DLList::DLList()
     this->tail = NULL;
 };
 
+DLList::~DLList()
+{};
 
 void DLList::FrontInsert(double item)
 { // insert a node with an item in front of the list
@@ -70,9 +73,36 @@ void DLList::FrontInsert(double item)
 	}
 	this->head = new_head_node; // update the headnode
 	size+=1; // increase the size of the array by 1
-}
+};
+
+void DLList::Print()
+{ // print out the items of the list. Go until the tail node or in case of the error until non NULL node
+    Node* n = this->head;
+    while(n != NULL) // the tail's next node is NULL
+    {
+        cout << n->item << " "; // print out the item
+        n = n->next_node; // move to the next node
+    }
+    cout << endl;
+
+};
+
 int main(int argc, char const *argv[])
 {
+
+    // TEST Print()
+    DLList* new_ls = new DLList(); // initialize the list
+    new_ls->FrontInsert(3);
+    new_ls->FrontInsert(2.213);
+    new_ls->FrontInsert(1);
+    new_ls->Print();
+
+    
+    return 0;
+}
+
+
+
     // // TEST Node(double item)
     // Node* n1 = new Node(3.212);
     // cout << n1->item << endl;
@@ -112,6 +142,3 @@ int main(int argc, char const *argv[])
     // cout << new_ls->tail->prev_node->item << " "; // prev node test
     // cout << new_ls->tail->item << " "; // tail test
     // cout << new_ls->size << endl;
-
-    return 0;
-}
