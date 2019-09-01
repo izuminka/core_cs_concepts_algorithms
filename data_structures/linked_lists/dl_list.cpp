@@ -56,6 +56,21 @@ DLList::DLList()
 };
 
 
+void DLList::FrontInsert(double item)
+{ // insert a node with an item in front of the list
+    //TODO	this->head = new Node(item, NULL, this->head);
+	Node* new_head_node = new Node(item, NULL, this->head);
+	if (size != 0) // if the list is not empty
+	{
+		this->head->prev_node = new_head_node; // update the previous node of the head
+	}
+	else // if the list is empty
+	{
+		this->tail = new_head_node; // initialize a tail
+	}
+	this->head = new_head_node; // update the headnode
+	size+=1; // increase the size of the array by 1
+}
 int main(int argc, char const *argv[])
 {
     // // TEST Node(double item)
@@ -79,9 +94,24 @@ int main(int argc, char const *argv[])
     // cout << n1->item << " ";
     // cout << n1->next_node->item << " "<< endl;
 
-    // TEST DLList()
-    DLList* new_ls = new DLList();
-    cout << new_ls->tail;
+    // TEST DLList(), FrontInsert(double item)
+    // // TEST 1 node
+    // DLList* new_ls = new DLList(); // initialize the list
+    // new_ls->FrontInsert(1.24141);
+    // cout << new_ls->head->item << " ";
+    // cout << new_ls->tail->item << " ";
+    // cout << new_ls->size << endl;
+
+    // // TEST 3 nodes
+    // DLList* new_ls = new DLList(); // initialize the list
+    // new_ls->FrontInsert(3);
+    // new_ls->FrontInsert(2.213);
+    // new_ls->FrontInsert(1);
+    // cout << new_ls->head->item << " "; //head test
+    // cout << new_ls->head->next_node->item << " "; // next node test
+    // cout << new_ls->tail->prev_node->item << " "; // prev node test
+    // cout << new_ls->tail->item << " "; // tail test
+    // cout << new_ls->size << endl;
 
     return 0;
 }
