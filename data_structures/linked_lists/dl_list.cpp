@@ -46,6 +46,7 @@ class DLList
         ~DLList();  // destructor
         void FrontInsert(double item); // insert a node with an item in front of the list
         void Print(); // print the items of the list
+        Node* GetNode(int index);
 };
 
 DLList::DLList()
@@ -83,8 +84,27 @@ void DLList::Print()
         n = n->next_node; // move to the next node
     }
     cout << endl;
-
 };
+
+Node* DLList::GetNode(int index)
+{ // search for the node given the index in the array, starting from i = 0
+    //TODO write raise value error
+    if ((index < 0) || (index >= size)) // if the index is outside the bounds of the list
+    {
+        return NULL;
+    }
+    else
+    {
+        Node* current_node = this->head;
+        int current_i = 0;
+        do 
+        {
+			current_node = current_node->next_node;
+			current_i += 1;
+        }while(current_i != index);
+        return current_node;
+    }
+}
 
 int main(int argc, char const *argv[])
 {
@@ -96,9 +116,15 @@ int main(int argc, char const *argv[])
     // new_ls->FrontInsert(1);
     // new_ls->Print();
 
+    // // // TEST GetNode(int index)
+    // DLList* new_ls = new DLList(); // initialize the list
+    // new_ls->FrontInsert(3);
+    // new_ls->FrontInsert(2.213);
+    // new_ls->FrontInsert(1);
+    // cout << new_ls->GetNode(1)->item << endl;
+    // cout << new_ls->GetNode(-10)->item << endl;
+    // cout << new_ls->GetNode(10)->item << endl;
 
-
-    
     return 0;
 }
 
