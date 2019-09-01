@@ -35,14 +35,13 @@ Node::~Node()
 
 class DLList
 {
-    // private:
-
-    public:
+    private:
         //TODO make size, head, tail private after testing
         int size; // size of the list 
         Node* head; // head node of the list
         Node* tail; // tail of the list
 
+    public:
         DLList();   // constructor
         ~DLList();  // destructor
         void FrontInsert(double item); // insert a node with an item in front of the list
@@ -90,12 +89,14 @@ void DLList::Print()
 int main(int argc, char const *argv[])
 {
 
-    // TEST Print()
-    DLList* new_ls = new DLList(); // initialize the list
-    new_ls->FrontInsert(3);
-    new_ls->FrontInsert(2.213);
-    new_ls->FrontInsert(1);
-    new_ls->Print();
+    // // TEST Print()
+    // DLList* new_ls = new DLList(); // initialize the list
+    // new_ls->FrontInsert(3);
+    // new_ls->FrontInsert(2.213);
+    // new_ls->FrontInsert(1);
+    // new_ls->Print();
+
+
 
     
     return 0;
