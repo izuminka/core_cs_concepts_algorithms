@@ -33,6 +33,27 @@ Node::Node(double item, Node* prev_node, Node* next_node)
 Node::~Node()
 {};
 
+class DLList
+{
+    // private:
+
+    public:
+        //TODO make size, head, tail private after testing
+        int size; // size of the list 
+        Node* head; // head node of the list
+        Node* tail; // tail of the list
+
+        DLList();   // constructor
+        ~DLList();  // destructor
+        void FrontInsert(double item); // insert a node with an item in front of the list
+};
+
+DLList::DLList()
+{   // initialize an empty list
+    this->size = 0; 
+    this->head = NULL;
+    this->tail = NULL;
+};
 
 
 int main(int argc, char const *argv[])
@@ -52,11 +73,15 @@ int main(int argc, char const *argv[])
     // cout << n1->prev_node->item << " ";
     // cout << n1->item << " ";
     // cout << n1->next_node->item << " "<< endl;
-
+    //
     // delete n1->next_node;
     // cout << n1->prev_node->item << " ";
     // cout << n1->item << " ";
     // cout << n1->next_node->item << " "<< endl;
+
+    // TEST DLList()
+    DLList* new_ls = new DLList();
+    cout << new_ls->tail;
 
     return 0;
 }
