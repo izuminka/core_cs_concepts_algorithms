@@ -10,7 +10,7 @@ class Node
         Node* next_node; // pointer to next node in the list
         //Constructors
         Node(double item); // init prev_node and next_node to NULL
-        // Node(double item, Node* prev_node, Node* next_node);
+        Node(double item, Node* prev_node, Node* next_node);
         // Destructors
         ~Node();
 };
@@ -23,11 +23,26 @@ Node::Node(double item)
     this->next_node = NULL;
 };
 
+Node::Node(double item, Node* prev_node, Node* next_node)
+{// initiate the item, set the neighboring nodes pointers
+    this->item = item;
+    this->prev_node = prev_node;
+    this->next_node = next_node;
+};
+
+
+
 int main(int argc, char const *argv[])
 {
-    // TEST constructor 1
-    Node* n1 = new Node(3.212);
-    cout << n1->item << endl;
+    // // TEST Node(double item)
+    // Node* n1 = new Node(3.212);
+    // cout << n1->item << endl;
+
+    // TEST Node(double item, Node* prev_node, Node* next_node)
+    Node* n1 = new Node(1, new Node(0), new Node(2));
+    cout << n1->prev_node->item << " ";
+    cout << n1->item << " ";
+    cout << n1->next_node->item << " ";
     
     return 0;
 }
