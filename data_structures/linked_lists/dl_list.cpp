@@ -30,6 +30,9 @@ Node::Node(double item, Node* prev_node, Node* next_node)
     this->next_node = next_node;
 };
 
+Node::~Node()
+{};
+
 
 
 int main(int argc, char const *argv[])
@@ -38,11 +41,22 @@ int main(int argc, char const *argv[])
     // Node* n1 = new Node(3.212);
     // cout << n1->item << endl;
 
-    // TEST Node(double item, Node* prev_node, Node* next_node)
-    Node* n1 = new Node(1, new Node(0), new Node(2));
-    cout << n1->prev_node->item << " ";
-    cout << n1->item << " ";
-    cout << n1->next_node->item << " ";
-    
+    // // TEST Node(double item, Node* prev_node, Node* next_node)
+    // Node* n1 = new Node(1, new Node(0), new Node(2));
+    // cout << n1->prev_node->item << " ";
+    // cout << n1->item << " ";
+    // cout << n1->next_node->item << " ";
+
+    // // TEST ~Node()
+    // Node* n1 = new Node(1, new Node(0), new Node(2));
+    // cout << n1->prev_node->item << " ";
+    // cout << n1->item << " ";
+    // cout << n1->next_node->item << " "<< endl;
+
+    // delete n1->next_node;
+    // cout << n1->prev_node->item << " ";
+    // cout << n1->item << " ";
+    // cout << n1->next_node->item << " "<< endl;
+
     return 0;
 }
