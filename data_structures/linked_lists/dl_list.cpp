@@ -45,8 +45,11 @@ class DLList
         DLList();   // constructor
         ~DLList();  // destructor
         void FrontInsert(double item); // insert a node with an item in front of the list
+        void InsertAfter(int index, double item); // insert a node with a given item after a given index in the list
         void Print(); // print the items of the list
         int GetSize(); // get the size of the list
+        double FrontItem(); // return the item of the front node
+        double BackItem(); // return the item of the back node
         Node* GetNode(int index); // return the node of the provided index, start from 0
         void RemoveNode(int index); // remove the node from the list at a given index, start from 0
 };
@@ -60,6 +63,8 @@ DLList::DLList()
 
 DLList::~DLList()
 {};
+
+
 
 void DLList::FrontInsert(double item)
 { // insert a node with an item in front of the list
@@ -92,6 +97,15 @@ int DLList::GetSize()
 {// return the size of the array
 	return size;
 };
+
+double DLList::FrontItem()
+{// return the item of the front node
+    return this->head->item;
+} 
+double DLList::BackItem()
+{// return the item of the back node
+    return this->tail->item;
+}
 
 Node* DLList::GetNode(int index)
 { // search for the node given the index in the array, starting from i = 0
@@ -144,25 +158,29 @@ void DLList::RemoveNode(int index)
 	}
 }
 
+// void DLList::InsertAfter(int index, double item)
+// { // insert a node with an item in after index
+//     //TODO	this->head = new Node(item, NULL, this->head);
+// 	Node* node_index = this->GetNode(index);
+//     // Node* new_node = new Node(item, node_index->prev_node, node_index->next_node);
+
+// 	if (size != 0) // if the list is not empty
+// 	{
+// 		node_index->prev_node = new_head_node; // update the previous node of the head
+// 	}
+// 	else // if the list is empty
+// 	{
+// 		this->tail = new_head_node; // initialize a tail
+// 	}
+// 	this->head = new_head_node; // update the headnode
+// 	size+=1; // increase the size of the array by 1
+// };
 
 
 int main(int argc, char const *argv[])
 {
-    // // TEST RemoveNode(int index)
-    // DLList* new_ls = new DLList(); // initialize the list
-    // new_ls->FrontInsert(3);
-    // new_ls->FrontInsert(2.213);
-    // new_ls->FrontInsert(1);
 
-    // int ind = 10; // -1. 0. 1, 2, 10 works, 
-    // cout << "Before del" << endl;
-    // new_ls->Print();
-    // cout << new_ls->GetSize() << endl;
-    // cout << "After del" << endl;
-    // new_ls->RemoveNode(ind);
-    // new_ls->Print();
-    // cout << new_ls->GetSize() << endl;
-
+    // TEST InsertAfter(int index, double item);
 
     return 0;
 }
@@ -231,3 +249,18 @@ int main(int argc, char const *argv[])
     // new_ls->FrontInsert(2.213);
     // new_ls->FrontInsert(1);
     // cout << new_ls->GetSize();
+
+    // // TEST RemoveNode(int index)
+    // DLList* new_ls = new DLList(); // initialize the list
+    // new_ls->FrontInsert(3);
+    // new_ls->FrontInsert(2.213);
+    // new_ls->FrontInsert(1);
+    //
+    // int ind = 10; // -1. 0. 1, 2, 10 works, 
+    // cout << "Before del" << endl;
+    // new_ls->Print();
+    // cout << new_ls->GetSize() << endl;
+    // cout << "After del" << endl;
+    // new_ls->RemoveNode(ind);
+    // new_ls->Print();
+    // cout << new_ls->GetSize() << endl;
