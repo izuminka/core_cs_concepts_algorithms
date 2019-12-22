@@ -1,12 +1,18 @@
 # Linked List
 
-## Implementation
+#### [Python](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/singly_ll.py)
+#### [C++](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/doubly_ll.cpp)
 
-[**Python**](https://github.com/izuminka/ds_algorithms/blob/master/linked_lists/impl/singly_ll.py)
 
-[**C++**](https://github.com/izuminka/ds_algorithms/blob/master/linked_lists/impl/doubly_ll.cpp)
+## Complexity
+| Access  | Search | Insert | Delete | | Space |
+| :---:   | :---:  | :---:  | :---:  |-| :---: |
+| O(n)    | O(n)   | O(1)   | O(1)   | | O(n)  |
 
-### Operations
+## Operations
+
+<details><summary><strong>list</strong></summary><br>
+
 - at(index) - returns item at given index
 - insert(index, value) - insert value at index
 - delete(index) - delete item at index
@@ -17,14 +23,7 @@
 - back() - get value of end item
 - push_back(value) - adds an item at the end
 - pop_back() - removes end item and returns its value
-
-
-### Analysis
-| Access  | Search | Insert | Delete | | Space |
-| :---:   | :---:  | :---:  | :---:  |-| :---: |
-| O(n)    | O(n)   | O(1)   | O(1)   | | O(n)  |
-
-
+</details>
 
 ## Algorithms
 - Merge Sort
