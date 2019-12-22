@@ -4,8 +4,7 @@ and implementation of core CS data structures and algorithms.
 
 ## Array
 
-<details><summary><strong>Implementation</strong></summary><blockquote>
-<br>
+<details><summary><strong>Implementation</strong></summary><blockquote><br>
 Implement a vector (mutable array with automatic resizing).
 When you reach capacity, resize to double the size. When popping an
 item, if size is 1/4 of capacity, resize to half
@@ -41,17 +40,15 @@ item, if size is 1/4 of capacity, resize to half
 </blockquote></details>
 
 
-
-
-<details><summary><strong>Algorithms</strong></summary><blockquote>
-<details><summary><strong>Sorting</strong></summary>
+<details><summary><strong>Algorithms</strong></summary><blockquote><br>
+<details><summary><strong>Sorting</strong></summary><br>
 
 - Quick Sort
 - Heap Sort
 - Merge Sort
 </details>
 
-<details><summary><strong>Search</strong></summary>
+<details><summary><strong>Search</strong></summary><br>
 
 - Binary Search
   - first occurring
@@ -61,7 +58,7 @@ item, if size is 1/4 of capacity, resize to half
 </blockquote></details>
 
 
-<details><summary><strong>Associated Problems</strong></summary>
+<details><summary><strong>Associated Problems</strong></summary><br>
 
 - [Two Sum](https://leetcode.com/problems/two-sum/)
 - [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
