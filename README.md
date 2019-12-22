@@ -4,15 +4,14 @@ and implementation of core CS data structures and algorithms.
 
 ## Array
 
-<details open><summary><strong>Implementation</strong></summary><blockquote style='order-left:none;color:black;padding:0 2em'>
-<br>
+<details><summary><strong>Implementation</strong></summary><blockquote>
 <br>
 Implement a vector (mutable array with automatic resizing).
 When you reach capacity, resize to double the size. When popping an
 item, if size is 1/4 of capacity, resize to half
 <br>
 <br>
-<details><summary><strong>OOP</strong></summary>
+<details><summary><strong>OOP</strong></summary><br>
 
 - **attributes**
   - size() - number of items
@@ -30,7 +29,7 @@ item, if size is 1/4 of capacity, resize to half
   - resize(new_capacity), private method
 </details>
 
-<details><summary><strong>Analysis</strong></summary>
+<details><summary><strong>Analysis</strong></summary><br>
 
 - **Time**
   - O(1) to add/remove at end
