@@ -1,17 +1,17 @@
-# Linked List
+## Linked List
 
-#### [Python](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/singly_ll.py)
-#### [C++](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/doubly_ll.cpp)
+[**Python**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/singly_ll.py)
+, [**C++**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/doubly_ll.cpp)
 
+<details><summary><strong>Complexity</strong></summary><br>
 
-## Complexity
 | Access  | Search | Insert | Delete | | Space |
 | :---:   | :---:  | :---:  | :---:  |-| :---: |
 | O(n)    | O(n)   | O(1)   | O(1)   | | O(n)  |
 
-## Operations
+</details>
 
-<details><summary><strong>list</strong></summary><br>
+<details><summary><strong>Operations</strong></summary><br>
 
 - at(index) - returns item at given index
 - insert(index, value) - insert value at index
