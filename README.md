@@ -13,9 +13,9 @@ item, if size is 1/4 of capacity, resize to half
 <details><summary><strong>OOP</strong></summary><br>
 
 - **attributes**
-  - size() - number of items
-  - capacity() - number of items it can hold
-  - is_empty()
+  - size - number of items
+  - capacity - number of items it can hold
+  - is_empty
 - **methods**
   - at(index) - returns item at given index, blows up if index out of bounds
   - push(item)
@@ -28,13 +28,12 @@ item, if size is 1/4 of capacity, resize to half
   - resize(new_capacity), private method
 </details>
 
-<details><summary><strong>Analysis</strong></summary><br>
+<details><summary><strong>Analysis</strong></summary>
 
-- **Time**
-  - O(1) to add/remove at end
-  - O(n) to insert/remove elsewhere
-- **Space**
-  - O(n)
+| Access  | Search | Insert | Delete | | Space |
+| :---:   | :---:  | :---:  | :---:  |-| :---: |
+| O(1)    | O(n)   | O(n)   | O(n)   | | O(n)  |
+
 </details>
 
 </blockquote></details>
@@ -67,14 +66,69 @@ item, if size is 1/4 of capacity, resize to half
 </details>
 
 
+
+## Linked List
+
+<details><summary><strong>Implementation</strong></summary><blockquote><br>
+
+[**Singly ll Python**](https://github.com/izuminka/ds_algorithms/blob/master/linked_lists/impl/python/singly_ll.py)
+<br>
+[**Doubly ll C++**](https://github.com/izuminka/ds_algorithms/blob/master/linked_lists/impl/c%2B%2B/doubly_ll.cpp)
+
+<br>
+<br>
+<details><summary><strong>OOP</strong></summary><br>
+
+- **methods**
+  - at(index) - returns item at given index
+  - insert(index, value) - insert value at index
+  - delete(index) - delete item at index
+  - reverse() - reverses the list
+  - front() - get value of front item
+  - push_front(value) - adds an item to the front of the list
+  - pop_front() - remove front item and return its value
+  - back() - get value of end item
+  - push_back(value) - adds an item at the end
+  - pop_back() - removes end item and returns its value
+</details>
+
+<details><summary><strong>Analysis</strong></summary>
+
+| Access  | Search | Insert | Delete | | Space |
+| :---:   | :---:  | :---:  | :---:  |-| :---: |
+| O(n)    | O(n)   | O(1)   | O(1)   | | O(n)  |
+
+</details>
+
+</blockquote></details>
+
+
+<details><summary><strong>Algorithms</strong></summary><br>
+
+- Merge Sort
+- Quick Sort
+- Detect loop in a linked list
+</details>
+
+
+
+<details><summary><strong>Associated Problems</strong></summary><br>
+
+- [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+- [Copy List With Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
+- [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+
+</details>
+
 ## Other
 - **stack**
 - **queues**
-- **linked_lists**
 - **graphs**
 - **hash_ds**
 - **heaps**
 - **trees**
+
+
 
 
  # Concepts
