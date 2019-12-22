@@ -1,33 +1,31 @@
-## Core CS knowledge
+# Data Structures Implementation and Algorithms (C++/Python)
+This repository contains C++/Python 3 code showcasing my knowledge
+and implementation of core CS data structures and algorithms.
 
-This repository contains C++ code showcasing my knowledge of core CS concepts and alorithms. Here you can find my implementation of integral sorting and search algorithms as well as a demostration of concepts such as bit manipulation, recursion, dynamic programming, memeory management
+## Array
 
-## Data Structures
-- **Array**
-- **Linked List**
-- **Stack**
-- **Queue**
-- **Hash table**
-
-## Algorithms
-
-### Sorting
-Completed
+### Algorithms
+#### Sorting
 - **Quick Sort**
 - **Heap Sort**
-
-In progress
 - **Merge Sort**
 
-### Search
-- **Breadth-First Search**
-- **Depth-First Search**
+#### Search
 - **Binary Search**
-- **Dejecstras**
+  - **first occurring**
+  - **last occurring**
+
+## Other
+- **stack**
+- **queues**
+- **linked_lists**
+- **graphs**
+- **hash_ds**
+- **heaps**
+- **trees**
 
 
- ### Concepts from the guy:
-
+ # Concepts
     Recursion
     Dynamic Programming
     Object-Oriented Programming
@@ -49,19 +47,3 @@ In progress
     Scalability,
     Data Handling (if you have 4+ years experience)
     Bitwise operations
-
-Trees
-
-    Trees - Notes & Background
-    Binary search trees: BSTs
-    Heap / Priority Queue / Binary Heap
-    balanced search trees (general concept, not details)
-    traversals: preorder, inorder, postorder, BFS, DFS
-
-Graphs
-
-    directed
-    undirected
-    adjacency matrix
-    adjacency list
-    traversals: BFS, DFS
