@@ -3,11 +3,8 @@ This repository contains C++/Python 3 code showcasing my knowledge
 and implementation of core CS data structures and algorithms.
 
 ## Array
-<style>
-blockquote {color:black;order-left:none;padding:0 2em}
-</style>
 
-<details open><summary><strong>Implementation</strong></summary><blockquote>
+<details open><summary><strong>Implementation</strong></summary><blockquote style='order-left:none;color:black;padding:0 2em'>
 <br>
 <br>
 Implement a vector (mutable array with automatic resizing).
