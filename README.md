@@ -4,14 +4,13 @@ and implementation of core CS data structures and algorithms.
 
 ## Array
 
-<details open>
-<summary>Implementation</summary>
+<details><summary>Implementation </summary><blockquote>
+Implement a vector (mutable array with automatic resizing).
+When you reach capacity, resize to double the size. When popping an
+item, if size is 1/4 of capacity, resize to half
+<br>
+<details><summary> OOP </summary>
 
-Implement a vector (mutable array with automatic resizing):
-when you reach capacity, resize to double the size
-when popping an item, if size is 1/4 of capacity, resize to half
-
-#### OOP
 - **attributes**
   - size() - number of items
   - capacity() - number of items it can hold
@@ -26,35 +25,41 @@ when popping an item, if size is 1/4 of capacity, resize to half
   - remove(item) - looks for value and removes index holding it (even if in multiple places)
   - find(item) - looks for value and returns first index with that value, -1 if not found
   - resize(new_capacity), private method
+</details>
 
-#### Analysis
+<details><summary> Analysis </summary>
+
 - **Time**
   - O(1) to add/remove at end
   - O(n) to insert/remove elsewhere
 - **Space**
   - O(n)
-
 </details>
 
+</blockquote></details>
 
-<details open>
-<summary>Algorithms</summary>
 
-#### Sorting
-- **Quick Sort**
-- **Heap Sort**
-- **Merge Sort**
 
-#### Search
-- **Binary Search**
-  - **first occurring**
-  - **last occurring**
 
+<details><summary>Algorithms</summary><blockquote>
+<details><summary>Sorting</summary>
+
+- Quick Sort
+- Heap Sort
+- Merge Sort
 </details>
 
+<details><summary>Search</summary>
 
-<details open>
-<summary>Associated Problems</summary>
+- Binary Search
+  - first occurring
+  - last occurring
+</details>
+
+</blockquote></details>
+
+
+<details><summary>Associated Problems</summary>
 
 - [Two Sum](https://leetcode.com/problems/two-sum/)
 - [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
@@ -74,6 +79,9 @@ when popping an item, if size is 1/4 of capacity, resize to half
 
 
  # Concepts
+<details>
+<summary>General</summary>
+
     Recursion
     Dynamic Programming
     Object-Oriented Programming
@@ -95,3 +103,6 @@ when popping an item, if size is 1/4 of capacity, resize to half
     Scalability,
     Data Handling (if you have 4+ years experience)
     Bitwise operations
+
+
+</details>
