@@ -1,5 +1,5 @@
 # Linked List
-[**Python Implementation**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/probs/merge_k_sorted_lists.py)
+[**Python Implementation**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/singly_ll.py)
 
 <details><summary><strong>Complexity</strong></summary><br>
 
@@ -33,12 +33,12 @@
 
 [**Python Solution**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/probs/merge_k_sorted_lists.py)
 <br>
-Merge k sorted linked lists and return it as one sorted list. Analyze and
-describe its complexity.
+Merge k sorted linked lists and return it as one sorted list.
 </details>
 
 
 <!---
+Analyze and describe its complexity.
 - [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 - [Copy List With Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
 - [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
