@@ -2,13 +2,13 @@
 This repository contains C++/Python 3 code showcasing my knowledge
 and implementation of core CS data structures and algorithms.
 
-## [Array](https://github.com/izuminka/ds_algorithms/tree/master/array)
 ## [Linked List](https://github.com/izuminka/ds_algorithms/tree/master/linked_list)
 
 ## Other
+- **array**
 - **stack**
-- **queues**
-- **graphs**
+- **queue**
+- **graph**
 - **hash_ds**
 - **heaps**
 - **trees**

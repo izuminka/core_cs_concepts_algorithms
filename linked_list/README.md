@@ -1,7 +1,5 @@
 # Linked List
-
 [**Python**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/singly_ll.py)
-, [**C++**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/doubly_ll.cpp)
 
 <details><summary><strong>Complexity</strong></summary><br>
 
