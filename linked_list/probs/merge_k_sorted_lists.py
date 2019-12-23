@@ -19,7 +19,7 @@ def merge(first, second):
         first.next = merge(first.next, second)
     return first or second
 
-def merge_k_lists(lists):
+def merge_k(lists):
     """Merge K sorted linked lists
 
     Args:
@@ -33,6 +33,4 @@ def merge_k_lists(lists):
     if len(lists) == 1:
         return lists[0]
     mid = len(lists)//2
-    l = mergeK(lists[:mid])
-    r = mergeK(lists[mid:])
-    return merge(l, r)
+    return merge(merge_k(lists[:mid]), merge_k(lists[mid:]))
