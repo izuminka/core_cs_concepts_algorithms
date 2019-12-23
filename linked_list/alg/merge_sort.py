@@ -19,12 +19,25 @@ def test_ll(s):
 def split_half(head):
     if not head or not head.next:
         return head
-    slow = head.next
-    fast = head.next
+    slow = head
+    fast = head
     while fast.next and fast.next.next:
         slow = slow.next
         fast = fast.next.next
     return slow
+
+def two_halfs_ll(head):
+    mid = split_half(head)
+    right = mid.next
+    mid.next = None
+    return head, right
+
+def merge(first,second):
+    if first and second:
+        if first.val>second.val:
+            first,second = second,first
+        first.next = merge(first.next,second)
+    return first or second
 
 # def merge_sort(head):
     # if not head or not head.next:
@@ -36,10 +49,6 @@ def split_half(head):
 
 t_ll = test_ll(1)
 print_ll(t_ll)
-split_half(t_ll).val
-
-
-# t = Node(0)
-# t.next = Node(1)
-# t.next.next = Node(3)
-# t.next.next.next = Node(4)
+left, right = two_halfs_ll(t_ll)
+print_ll(left)
+print_ll(right)
