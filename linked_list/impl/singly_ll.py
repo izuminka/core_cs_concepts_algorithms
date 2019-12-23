@@ -24,6 +24,19 @@ class SinglyLinkedList:
             print(current.val)
             current = current.next
 
+    def reverse(self):
+        """Reverse the list
+        """
+        if self.__size > 1:
+            prev = None
+            current = self.__head
+            while current:
+                temp = current.next
+                current.next = prev
+                prev = current
+                current = temp
+            self.__head = prev
+
     def at(self,index):
         """Get Node at the index strating from 0. If beyond len list return None
 
@@ -161,20 +174,19 @@ class SinglyLinkedList:
             self.__size-=1
 
 
-
-
-# ll_test = SinglyLinkedList()
 # # ll_test.push_back(0)
 # # ll_test.pop_front()
 # # ll_test.push_back(0)
 # # ll_test.print_list()
 #
+# ll_test = SinglyLinkedList()
 # ll_test.push_back(0)
 # ll_test.push_back(1)
 # ll_test.push_back(2)
-#
-# ll_test.delete(1)
 # ll_test.print_list()
+# ll_test.reverse()
+# ll_test.print_list()
+
 #
 # ll_test.insert(3,100)
 # ll_test.insert(0,111)
