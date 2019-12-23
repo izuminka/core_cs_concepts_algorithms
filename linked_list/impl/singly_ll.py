@@ -25,7 +25,7 @@ class SinglyLinkedList:
             current = current.next
 
     def at(self,index):
-        """get Node at the index strating from 0. If beyond len list return None
+        """Get Node at the index strating from 0. If beyond len list return None
 
         Args:
             index (int): index of the desired Node.
@@ -46,6 +46,8 @@ class SinglyLinkedList:
         return self.__head
 
     def pop_front(self):
+        """Remove the last node of the list
+        """
         if self.__head:
             if self.__head.next:
                 self.__head = self.__head.next
@@ -54,6 +56,14 @@ class SinglyLinkedList:
             self.__size-=1
 
     def push_front(self,val):
+        """Insert a new head node
+
+        Args:
+            val (float): val to be inserted
+
+        Returns:
+            None
+        """
         if not self.__head:
             self.__head = Node(val)
         else:
@@ -65,6 +75,8 @@ class SinglyLinkedList:
 
     # dep on at()
     def back(self):
+        """Get the last Node of the list
+        """
         return self.at(self.__size-1)
 
     #dep on at()
@@ -87,7 +99,6 @@ class SinglyLinkedList:
 
         Returns:
             None
-
         """
         if not self.__head:
             self.__head = Node(val)
@@ -98,6 +109,18 @@ class SinglyLinkedList:
 
     # dep on at(), push_back(), push_front()
     def insert(self,index,val):
+        """Insert value at an index in the array
+
+        Args:
+            index (int): index to incert the val at
+            val (float): val to be inserted
+
+        Raises:
+            ValueError: index out of range
+
+        Returns:
+            None
+        """
         if index < 0 or self.__size<index:
             raise ValueError('Index outside the range')
         else:
@@ -114,6 +137,17 @@ class SinglyLinkedList:
 
     #dep at(), pop_front(), pop_back()
     def delete(self,index):
+        """Find node at index and del it
+
+        Args:
+            index (int): index of the node to be deleted
+
+        Raises:
+            ValueError: index out of range
+
+        Returns:
+            None
+        """
         if index < 0 or self.__size<=index:
             raise ValueError('Index outside the range')
         else:
@@ -125,6 +159,7 @@ class SinglyLinkedList:
             else:
                 self.pop_back()
             self.__size-=1
+
 
 
 
