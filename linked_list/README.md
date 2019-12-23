@@ -1,15 +1,7 @@
 # Linked List
 [**Python Implementation**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/singly_ll.py)
 
-<details><summary><strong>Complexity</strong></summary><br>
-
-| Access  | Search | Insert | Delete | | Space |
-| :---:   | :---:  | :---:  | :---:  |-| :---: |
-| O(n)    | O(n)   | O(1)   | O(1)   | | O(n)  |
-
-</details>
-
-<details><summary><strong>Operations</strong></summary><br>
+<details><summary><strong>Operations & Complexity</strong></summary><br>
 
 - at(index) - returns item at given index
 - insert(index, value) - insert value at index
@@ -21,6 +13,11 @@
 - back() - get value of end item
 - push_back(value) - adds an item at the end
 - pop_back() - removes end item and returns its value
+
+| Access  | Search | Insert | Delete | | Space |
+| :---:   | :---:  | :---:  | :---:  |-| :---: |
+| O(n)    | O(n)   | O(1)   | O(1)   | | O(n)  |
+
 </details>
 
 ## Algorithms
