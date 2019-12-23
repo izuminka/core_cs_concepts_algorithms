@@ -1,5 +1,5 @@
 # Linked List
-[**Python**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/singly_ll.py)
+[**Python**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/probs/merge_k_sorted_lists.py)
 
 <details><summary><strong>Complexity</strong></summary><br>
 
@@ -29,8 +29,17 @@
 - Detect loop in a linked list
 
 ## Problems
+<details><summary><strong>Merge K Sorted Lists</strong></summary><br>
+Merge k sorted linked lists and return it as one sorted list. Analyze and
+describe its complexity.
+
+[**Python Solution**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/impl/singly_ll.py)
+
+
+</details>
+
+<!---
 - [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 - [Copy List With Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
 - [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
-
-</details>
+-->
