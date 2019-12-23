@@ -1,4 +1,10 @@
 class Node:
+    """Building block for the singly linked list
+
+    Attributes:
+        val (float): value to be inserted
+        next (Node): next node in the list
+    """
     def __init__(self, val):
         self.val = val
         self.next = None
@@ -10,7 +16,6 @@ class SinglyLinkedList:
     Attributes:
         __head (class Node or None): head of the list
         __size (int): size of the list
-
     """
 
     def __init__(self):
