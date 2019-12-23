@@ -24,9 +24,23 @@
 </details>
 
 ## Algorithms
+
+<details><summary><strong>Merge Sort</strong></summary><br>
+
+[**Python Implementation**](https://github.com/izuminka/ds_algorithms/blob/master/linked_list/alg/merge_sort.py)
+<br>
+
+|    Time    | Space |
+| :--------: | :---: |
+| O(nlog(n)) | O(n)  |
+
+</details>
+
+<!---
 - Merge Sort
 - Quick Sort
 - Detect loop in a linked list
+-->
 
 ## Problems
 <details><summary><strong>Merge K Sorted Lists</strong></summary><br>
