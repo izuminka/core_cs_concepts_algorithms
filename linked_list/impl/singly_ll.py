@@ -7,15 +7,19 @@ class SinglyLinkedList:
     """Singly Linked List
 
     Attributes:
-        head (class Node): head of the list
+        __head (class Node or None): head of the list
+        __size (int): size of the list
 
     """
     def __init__(self):
-        self.head = None
-        self.size = 0
+        self.__head = None
+        self.__size = 0
+
+    def size(self):
+        return self.__size
 
     def print_list(self):
-        current = self.head
+        current = self.__head
         while current:
             print(current.val)
             current = current.next
@@ -31,40 +35,50 @@ class SinglyLinkedList:
 
         """
         i = 0
-        current = self.head
+        current = self.__head
         while(i<index and current):
             current = current.next
             i+=1
         return current
 
+
     def front(self):
-        return self.head
+        return self.__head
+
+    def pop_front(self):
+        if self.__head:
+            if self.__head.next:
+                self.__head = self.__head.next
+            else:
+                self.__head = None
+            self.__size-=1
 
     def push_front(self,val):
-        if not self.head:
-            self.head = Node(val)
+        if not self.__head:
+            self.__head = Node(val)
         else:
-            new_head = Node(val)
-            old_head = self.head
-            self.head = new_head
-            self.head.next = old_head
+            new___head = Node(val)
+            old___head = self.__head
+            self.__head = new___head
+            self.__head.next = old___head
 
-    # dep on at
+
+    # dep on at()
     def back(self):
-        return self.at(self.size-1)
+        return self.at(self.__size-1)
 
-    #dep on at
+    #dep on at()
     def pop_back(self):
         """Remove the last node of the list
         """
-        if self.size>1:
+        if self.__size>1:
             #find a node one less than last one and set Node.next to None
-            self.at(self.size-2).next = None
+            self.at(self.__size-2).next = None
         else:
-            self.head = None
-        self.size=-1
+            self.__head = None
+        self.__size=-1
 
-    #dep on back
+    #dep on back()
     def push_back(self,val):
         """Push val at the end of the list
 
@@ -75,48 +89,63 @@ class SinglyLinkedList:
             None
 
         """
-        if not self.head:
-            self.head = Node(val)
+        if not self.__head:
+            self.__head = Node(val)
         else:
             self.back().next = Node(val)
-        self.size+=1
+        self.__size+=1
 
-    # dep on push_back, push_front
+
+    # dep on at(), push_back(), push_front()
     def insert(self,index,val):
-
-        if index < 0 or self.size<index:
+        if index < 0 or self.__size<index:
             raise ValueError('Index outside the range')
         else:
             if index == 0:
                 self.push_front(val)
-            elif 0 < index < self.size:
+            elif 0 < index < self.__size:
                 prev = self.at(index-1)
                 post = prev.next
                 prev.next = Node(val)
                 prev.next.next = post
             else:
                 self.push_back(val)
-            self.size+=1
+            self.__size+=1
+
+    #dep at(), pop_front(), pop_back()
+    def delete(self,index):
+        if index < 0 or self.__size<=index:
+            raise ValueError('Index outside the range')
+        else:
+            if index == 0:
+                self.pop_front()
+            elif 0 < index < self.__size-1:
+                prev = self.at(index-1)
+                prev.next = prev.next.next
+            else:
+                self.pop_back()
+            self.__size-=1
 
 
 
-#
 # ll_test = SinglyLinkedList()
-#
-# ll_test.insert(1,0)
-# ll_test.print_list()
+# # ll_test.push_back(0)
+# # ll_test.pop_front()
+# # ll_test.push_back(0)
+# # ll_test.print_list()
 #
 # ll_test.push_back(0)
 # ll_test.push_back(1)
 # ll_test.push_back(2)
-# ll_test.push_front(-3)
+#
+# ll_test.delete(1)
 # ll_test.print_list()
 #
 # ll_test.insert(3,100)
 # ll_test.insert(0,111)
 # ll_test.insert(0,21111)
 # ll_test.print_list()
-# # ll_test.size
+# # ll_test.__size
 # # ll_test.pop_back()
 # ll_test.back().val
 # # ll_test.at(5)
