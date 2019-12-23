@@ -1,22 +1,18 @@
-class Node:
-    def __init__(self,val):
-        self.val = val
-        self.next = None
+# class Node:
+#     def __init__(self,val):
+#         self.val = val
+#         self.next = None
 
-def print_ll(node):
-    while node:
-        print(node.val)
-        node = node.next
 
-def test_ll(s):
-    ls = list(range(s,-1,-1))
-    head = curr = Node(ls[0])
-    for v in ls[1:]:
-        curr.next = Node(v)
-        curr = curr.next
-    return head
+def get_mid_node(head):
+    """Find middle-1 node of linked list
 
-def split_half(head):
+    Args:
+        head (Node): head of the linked list
+
+    Returns:
+        Node: middle-1 node of the linked list
+    """
     if not head or not head.next:
         return head
     slow = head
@@ -26,29 +22,58 @@ def split_half(head):
         fast = fast.next.next
     return slow
 
-def two_halfs_ll(head):
-    mid = split_half(head)
+
+def split_half(head):
+    """Split linked list in two halfs
+
+    Args:
+        head (Node): head node of the linked list
+
+    Returns:
+        (Node, Node): head of left and right linked lists
+    """
+    mid = get_mid_node(head)
     right = mid.next
     mid.next = None
     return head, right
 
-def merge(first,second):
+
+def merge(first, second):
     if first and second:
-        if first.val>second.val:
-            first,second = second,first
-        first.next = merge(first.next,second)
+        if first.val > second.val:
+            first, second = second, first
+        first.next = merge(first.next, second)
     return first or second
 
-# def merge_sort(head):
-    # if not head or not head.next:
-    #     return head
-    # middle_node = split_half(head)#len(ls)//2
-    # left = merge_sort(head)
-    # right = merge_sort(middle_node)
-    # return merge(left, right)
 
-t_ll = test_ll(1)
-print_ll(t_ll)
-left, right = two_halfs_ll(t_ll)
-print_ll(left)
-print_ll(right)
+def merge_sort(head):
+    if not head or not head.next:
+        return head
+    left, right = split_half(head)
+    return merge(merge_sort(left), merge_sort(right))
+
+
+# --- HELPER FUNCTIONS ---
+def print_ll(node):
+    """Print values of linked list
+
+    Args:
+        node (type): head of the linked list
+
+    Returns:
+        None
+    """
+    while node:
+        print(node.val)
+        node = node.next
+
+
+def test_ll(s=10):
+    """Generate a test linked list (s to 0)
+    """
+    ls = list(range(s, -1, -1))
+    head = curr = Node(ls[0])
+    for v in ls[1:]:
+        curr.next = Node(v)
+        curr = curr.next
+    return head
